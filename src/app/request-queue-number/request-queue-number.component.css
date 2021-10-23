@@ -1,0 +1,32 @@
+.example-card {
+  max-width: 350px;
+  min-height: 250px;
+  margin: auto;
+  text-align: center;
+}
+
+.example-card h1 {
+  font-weight: 800;
+  font-size: 60px;
+  text-align: center;
+}
+.queueNum {
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.titlePrint {
+  text-align: center;
+  margin: auto;
+  justify-content: center;
+}
+
+.printButton {
+  margin: 10px 47%;
+}
+
+/* .example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+} */

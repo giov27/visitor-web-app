@@ -9,19 +9,26 @@ import { MenuComponent } from './menu/menu.component';
 import { MaterialModule } from './tools/material.module';
 import { APP_BASE_HREF } from '@angular/common';
 import { VisitorListComponent } from './visitor-list/visitor-list.component';
-
+import {MatTableModule} from '@angular/material/table';
+import {MatCardModule} from '@angular/material/card';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPrintModule } from 'ngx-print'
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     InputVisitorDetailsComponent,
     RequestQueueNumberComponent,
-    VisitorListComponent
+    VisitorListComponent,
   ],
   imports: [
     BrowserModule,
     MaterialModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatTableModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    NgxPrintModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
