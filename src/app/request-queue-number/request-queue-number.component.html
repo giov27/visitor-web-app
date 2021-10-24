@@ -1,13 +1,10 @@
 <mat-card class="example-card" id="print-section">
   <mat-card-header class="titlePrint">
-    <!-- <div mat-card-avatar class="example-header-image"></div> -->
     <mat-card-title>Healthy Hospital</mat-card-title>
     <mat-card-subtitle>Queue Number</mat-card-subtitle>
   </mat-card-header>
   <!--  queue Number-->
   <h1 class="queueNum">{{queueNum.queueNum}}</h1>
-  <!-- Barcode part or qr code -->
-  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
     <p class="queueNum">
       Please wait, and pay attention to your queue number <br>
@@ -18,9 +15,5 @@
       <p>{{queueNum.time}}</p>
     </div>
   </mat-card-content>
-  <!-- <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions> -->
 </mat-card>
 <button mat-raised-button color="primary" printSectionId="print-section" ngxPrint [useExistingCss]="true" class="printButton">Print</button>

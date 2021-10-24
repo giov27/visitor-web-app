@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import{ QueueNumberService } from '../services/queue-number.service'
 import{ HttpClient } from '@angular/common/http'
 import { environment } from '../../environments/environment.dev'
 
@@ -17,7 +16,6 @@ export class RequestQueueNumberComponent implements OnInit {
 
   ngOnInit(): void {
     // window.print()
-    // this.queueNumberAdd()
     this.http.post<any>(environment.QUEUE_BASE_URL, '').subscribe(data=>{
       console.log(data)
       this.queueNum = data.queueNumObj

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, NgForm, Validators} from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import  { VisitorDetailsService } from '../services/visitor-details.service'
 
 @Component({
@@ -8,8 +8,8 @@ import  { VisitorDetailsService } from '../services/visitor-details.service'
   styleUrls: ['./input-visitor-details.component.css']
 })
 export class InputVisitorDetailsComponent implements OnInit {
-  // email = new FormControl('');
-  outputMessage : string;
+  outputMessage : any;
+  output:any;
   constructor(private visitorDetailService: VisitorDetailsService) {  }
 
   ngOnInit(): void {
@@ -18,8 +18,9 @@ export class InputVisitorDetailsComponent implements OnInit {
     console.log(f.value);
     this.visitorDetailService.postVisitorDetail(f.value)
       .subscribe((data)=>{
-        console.log(data)
-        this.outputMessage = data.message
+        // console.log(data)
+        this.output = data
+        this.outputMessage = this.output.message
         }
     )
   }
