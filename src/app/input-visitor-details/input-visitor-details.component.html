@@ -1,23 +1,19 @@
-<form class="example-form">
+<!-- <form class="example-form" [formGroup]="visitorDetail.Form"> -->
+<form class="example-form" #f="ngForm" (ngSubmit)="postVisitorDetail(f)" autocomplete="off" >
   <h2 class="title">Customer Form</h2>
   <p>Please fill this form!</p>
-  <!-- <mat-form-field class="example-full-width">
-    <mat-label>Company (disabled)</mat-label>
-    <input matInput disabled value="Google">
-  </mat-form-field> -->
-
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>First name</mat-label>
-          <input matInput>
+          <input matInput ngModel required name="firstName">
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Last Name</mat-label>
-          <input matInput>
+          <input matInput name="lastName" ngModel>
         </mat-form-field>
       </td>
     </tr>
@@ -28,19 +24,19 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Gender</mat-label>
-          <input matInput>
+          <input matInput name="gender" ngModel required >
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Date of Birth</mat-label>
-          <input matInput>
+          <input matInput name="dateOfBirth" ngModel required >
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Age</mat-label>
-          <input matInput>
+          <input matInput name="age" ngModel required>
         </mat-form-field>
       </td>
     </tr>
@@ -48,13 +44,13 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Height</mat-label>
-          <input matInput>
+          <input matInput name="height" ngModel required>
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Weight</mat-label>
-          <input matInput>
+          <input matInput name="weight" ngModel required>
         </mat-form-field>
       </td>
     </tr>
@@ -62,13 +58,13 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Email Address</mat-label>
-          <input matInput>
+          <input matInput name="emailAddress" ngModel required>
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Phone Number</mat-label>
-          <input matInput>
+          <input matInput name="phoneNumber" ngModel required>
         </mat-form-field>
       </td>
     </tr>
@@ -77,12 +73,8 @@
   <p>
     <mat-form-field class="example-full-width">
       <mat-label>Address</mat-label>
-      <textarea matInput placeholder="Jl. Jendral Sudirman No. 4"></textarea>
+      <textarea matInput placeholder="Jl. Jendral Sudirman No. 4" name="address" ngModel required></textarea>
     </mat-form-field>
-    <!-- <mat-form-field class="example-full-width">
-      <mat-label>Address 2</mat-label>
-      <textarea matInput></textarea>
-    </mat-form-field> -->
   </p>
 
   <table class="example-full-width" cellspacing="0">
@@ -90,23 +82,17 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>City</mat-label>
-          <input matInput placeholder="Ex. San Francisco">
+          <input matInput placeholder="Ex. Samarinda" name="city" ngModel required>
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>State</mat-label>
-          <input matInput placeholder="Ex. California">
+          <input matInput placeholder="Ex. India" name="gender" ngModel required>
         </mat-form-field>
       </td>
-      <!-- <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Postal Code</mat-label>
-          <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
-          <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
-        </mat-form-field>
-      </td> -->
     </tr>
   </table>
-  <button mat-raised-button color="primary" class="printButton">Save</button>
+  <button mat-raised-button color="primary" class="printButton" type="submit">Save</button>
+  <p class="warning">{{outputMessage}}</p>
 </form>

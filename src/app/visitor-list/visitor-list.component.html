@@ -1,32 +1,40 @@
-<div class="example-container mat-elevation-z8">
-  <table mat-table [dataSource]="transactions">
-    <!-- Item Column -->
-    <ng-container matColumnDef="id">
-      <th mat-header-cell *matHeaderCellDef> Id </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.id}} </td>
-      <td mat-footer-cell *matFooterCellDef> Total </td>
-    </ng-container>
 
-    <ng-container matColumnDef="firstName">
-      <th mat-header-cell *matHeaderCellDef> First Name </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.firstName}} </td>
-      <td mat-footer-cell *matFooterCellDef>  </td>
-    </ng-container>
-    <ng-container matColumnDef="lastName">
-      <th mat-header-cell *matHeaderCellDef> Last Name </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.lastName}} </td>
-      <td mat-footer-cell *matFooterCellDef>  </td>
-    </ng-container>
+<h1>Visitor Details List</h1>
+<table class="table table-hover table-responsive">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Firstname/th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Height</th>
+      <th scope="col">Weight</th>
+      <th scope="col">Date Of Birth</th>
+      <th scope="col">Age</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Address</th>
+      <th scope="col">City</th>
+      <th scope="col">State</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of visitorDetailList; let i = index" [attr.data-index]="i">
+      <!-- <th scope="row">1</th> -->
+      <td>{{i+1}}</td>
+      <td>{{data.firstName}}</td>
+      <td>{{data.lastName}}</td>
+      <td>{{data.gender}}</td>
+      <td>{{data.height}}</td>
+      <td>{{data.weight}}</td>
+      <td>{{data.dateOfBirth}}</td>
+      <td>{{data.age}}</td>
+      <td>{{data.emailAddress}}</td>
+      <td>{{data.phoneNumber}}</td>
+      <td>{{data.address}}</td>
+      <td>{{data.city}}</td>
+      <td>{{data.state}}</td>
 
-    <!-- Cost Column -->
-    <ng-container matColumnDef="age">
-      <th mat-header-cell *matHeaderCellDef> Age </th>
-      <td mat-cell *matCellDef="let transaction"> {{transaction.age}} </td>
-      <td mat-footer-cell *matFooterCellDef> {{getTotalCost()}} Visitor </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
-  </table>
-</div>
+    </tr>
+  </tbody>
+</table>

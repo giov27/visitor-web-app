@@ -13,6 +13,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatCardModule} from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxPrintModule } from 'ngx-print'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule} from'@angular/common/http'
+
+import { VisitorDetailsService } from './services/visitor-details.service'
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,10 +32,14 @@ import { NgxPrintModule } from 'ngx-print'
     MatTableModule,
     BrowserAnimationsModule,
     MatCardModule,
-    NgxPrintModule
+    NgxPrintModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/' },
+    VisitorDetailsService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import{ QueueNumberService } from '../services/queue-number.service'
+import{ HttpClient } from '@angular/common/http'
+import { environment } from '../../environments/environment.dev'
 
 @Component({
   selector: 'app-request-queue-number',
@@ -7,30 +9,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./request-queue-number.component.css']
 })
 export class RequestQueueNumberComponent implements OnInit {
-  onPrint() :void{
-    // let printContents, popupWin;
-    // printContents = document.getElementById('print-section').innerHTML;
-    // popupWin = window.open('', '_blank', 'top=0,left=0,height=100%,width=auto');
-    // popupWin.document.open(printContents);
-    // popupWin.document.write(`
-    //   <html>
-    //     <head>
-    //       <title>Print tab</title>
-    //       <style>
+  queueNumberResult: any;
+  queueNumberFinal:any;
+  queueNum:any;
 
-    //       </style>
-    //     </head>
-    // <body onload="window.print()">${printContents}</body>
-    //   </html>`
-    // );
-    // popupWin.document.close();
-    // window.print()
-  }
-
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     // window.print()
-  }
+    // this.queueNumberAdd()
+    this.http.post<any>(environment.QUEUE_BASE_URL, '').subscribe(data=>{
+      console.log(data)
+      this.queueNum = data.queueNumObj
+    })
 
+  }
 }

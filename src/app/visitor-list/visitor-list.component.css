@@ -1,17 +1,13 @@
-.example-container {
-  height: 580px;
-  overflow: auto;
-  margin: 15px 15px;
-}
-
 table {
-  width: 100%;
+  margin: 30px;
+  padding: 20px;
+  border: 2px solid rgb(245, 209, 209);
+  border-radius: 15px;
+  box-shadow: 10px 15px 15px #888181;
+  max-width: 1100px;
 }
 
-tr.mat-footer-row {
+h1 {
+  margin: 30px;
   font-weight: bold;
-}
-
-.mat-table-sticky {
-  border-top: 1px solid #e0e0e0;
 }

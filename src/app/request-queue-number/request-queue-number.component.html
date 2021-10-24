@@ -5,7 +5,7 @@
     <mat-card-subtitle>Queue Number</mat-card-subtitle>
   </mat-card-header>
   <!--  queue Number-->
-  <h1 class="queueNum">A001</h1>
+  <h1 class="queueNum">{{queueNum.queueNum}}</h1>
   <!-- Barcode part or qr code -->
   <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu"> -->
   <mat-card-content>
@@ -14,8 +14,8 @@
       Thank you!
     </p>
     <div fxLayout="row" fxLayoutAlign="space-evenly">
-      <p>Date</p>
-      <p>Time</p>
+      <p>{{queueNum.date}}</p>
+      <p>{{queueNum.time}}</p>
     </div>
   </mat-card-content>
   <!-- <mat-card-actions>
